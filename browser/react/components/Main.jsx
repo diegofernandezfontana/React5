@@ -15,7 +15,7 @@ import NewPlaylistContainer from '../containers/NewPlaylistContainer';
 import LyricsContainer from '../containers/LyricsContainer';
 import PlaylistContainer from '../containers/PlaylistContainer';
 import StationsContainer from '../containers/StationsContainer';
-
+import StationContainer from '../containers/StationContainer';
 
 function onStationsEnter(){
     store.dispatch(fetchSongs())
@@ -28,7 +28,8 @@ export default () => (
       <Switch>
         <Route exact path="/albums" component={AlbumsContainer} />
         <Route path="/albums/:id" component={AlbumContainer} />
-        <RouteHook path="/stations" component={StationsContainer} onEnter={onStationsEnter}/>
+        <RouteHook path="/station/:genre" component={StationContainer} onEnter={onStationsEnter}/>
+        <RouteHook path="/stations" exact component={StationsContainer} onEnter={onStationsEnter}/>
         <Route path="/artists" exact component={FilterableArtistsContainer} />
         <Route path="/artists/:id" component={ArtistContainer} />
         <Route path="/playlists/new" component={NewPlaylistContainer} />

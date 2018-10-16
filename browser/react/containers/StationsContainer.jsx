@@ -3,7 +3,7 @@ import Stations from '../components/Stations';
 
 
 
-function mapDispatchToProps() {
+function mapDispatchToProps(dispatch, ownProps ) {
     return {};
 }
 
@@ -18,7 +18,7 @@ const convertSongsToStations = function (songsArray) {
     return stations;
   };
   
-const mapStateToProps = function (state) {    
+const mapStateToProps = function (state, ownProps) {    
     return {
         stations: convertSongsToStations(state.songs)
     };
